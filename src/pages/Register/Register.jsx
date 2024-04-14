@@ -1,12 +1,36 @@
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../providers/AuthProvider";
 
 const Register = () => {
+  const { createUser } = useContext(AuthContext);
+
   useEffect(() => {
     AOS.init();
   }, []);
+
+  const handleRegister = (e) => {
+    e.preventDefault();
+    console.log(e.currentTarget);
+    const form = new FormData(e.currentTarget);
+    const name = form.get("name");
+    const email = form.get("email");
+    const photo = form.get("photourl");
+    const password = form.get("password");
+    console.log(name, email, photo, password);
+
+    //create user
+
+    createUser(email, password)
+      .then((result) => {
+        console.log(result.user);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
   return (
     <div
@@ -22,7 +46,7 @@ const Register = () => {
               <h1 className="text-6xl font-bold">Register Now!</h1>
             </div>
             <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-yellow-300">
-              <form className="card-body">
+              <form onSubmit={handleRegister} className="card-body">
                 <div className="form-control">
                   <label className="label">
                     <span className="label-text">Name</span>
@@ -31,6 +55,7 @@ const Register = () => {
                     type="text"
                     placeholder="Name"
                     className="input input-bordered"
+                    name="name"
                     required
                   />
                 </div>
@@ -40,6 +65,7 @@ const Register = () => {
                   </label>
                   <input
                     type="email"
+                    name="email"
                     placeholder="email"
                     className="input input-bordered"
                     required
@@ -51,6 +77,7 @@ const Register = () => {
                   </label>
                   <input
                     type="text"
+                    name="photourl"
                     placeholder="PhotoUrl"
                     className="input input-bordered"
                     required
@@ -62,6 +89,7 @@ const Register = () => {
                   </label>
                   <input
                     type="password"
+                    name="password"
                     placeholder="Password"
                     className="input input-bordered"
                     required

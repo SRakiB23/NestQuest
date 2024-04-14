@@ -7,6 +7,12 @@ const Login = () => {
   useEffect(() => {
     AOS.init();
   }, []);
+  const handleLogin = (e) => {
+    e.preventDefault();
+    console.log(e.currentTarget);
+    const form = new FormData(e.currentTarget);
+    console.log(form.get("email"));
+  };
 
   return (
     <div
@@ -22,7 +28,7 @@ const Login = () => {
               <h1 className="text-6xl font-bold">Login now!</h1>
             </div>
             <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-yellow-300">
-              <form className="card-body">
+              <form onSubmit={handleLogin} className="card-body">
                 <div className="form-control">
                   <label className="label">
                     <span className="label-text">Email</span>
@@ -30,6 +36,7 @@ const Login = () => {
                   <input
                     type="email"
                     placeholder="email"
+                    name="email"
                     className="input input-bordered"
                     required
                   />
@@ -41,6 +48,7 @@ const Login = () => {
                   <input
                     type="password"
                     placeholder="password"
+                    name="password"
                     className="input input-bordered"
                     required
                   />
