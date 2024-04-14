@@ -1,0 +1,78 @@
+[
+  {
+    "id": 1,
+    "estate_title": "Luxury Villa with Ocean View",
+    "segment_name": "Villa",
+    "description": "A stunning luxury villa overlooking the ocean, perfect for a serene getaway.",
+    "price": "$2,500,000",
+    "status": "sale",
+    "area": "5000 sq ft",
+    "location": "Malibu, California",
+    "facilities": ["Living room", "Swimming pool", "Gourmet kitchen"],
+    "image": "https://example.com/villa1.jpg"
+  },
+  {
+    "id": 2,
+    "estate_title": "Modern Loft in Downtown",
+    "segment_name": "Apartment",
+    "description": "Contemporary loft apartment located in the heart of downtown.",
+    "price": "$1,200,000",
+    "status": "sale",
+    "area": "1500 sq ft",
+    "location": "New York City, New York",
+    "facilities": [
+      "Open-concept living area",
+      "Fitness center",
+      "Roof terrace"
+    ],
+    "image": "https://example.com/apartment1.jpg"
+  },
+  {
+    "id": 3,
+    "estate_title": "Charming Cottage in the Countryside",
+    "segment_name": "House",
+    "description": "Quaint cottage nestled in the countryside, surrounded by lush greenery.",
+    "price": "$800,000",
+    "status": "sale",
+    "area": "2500 sq ft",
+    "location": "Cotswolds, England",
+    "facilities": ["Cozy fireplace", "Garden patio", "Outdoor dining area"],
+    "image": "https://example.com/cottage1.jpg"
+  },
+  {
+    "id": 4,
+    "estate_title": "Luxury Penthouse with City Views",
+    "segment_name": "Apartment",
+    "description": "Elegant penthouse offering breathtaking views of the city skyline.",
+    "price": "$3,000,000",
+    "status": "sale",
+    "area": "3500 sq ft",
+    "location": "Los Angeles, California",
+    "facilities": ["Spa-inspired bathroom", "Private terrace", "Home theater"],
+    "image": "https://example.com/penthouse1.jpg"
+  },
+  {
+    "id": 5,
+    "estate_title": "Beachfront Retreat with Private Access",
+    "segment_name": "House",
+    "description": "Secluded beachfront retreat with direct access to pristine sandy shores.",
+    "price": "$1,800,000",
+    "status": "sale",
+    "area": "4000 sq ft",
+    "location": "Maui, Hawaii",
+    "facilities": ["Oceanfront deck", "Jacuzzi", "BBQ area"],
+    "image": "https://example.com/beachhouse1.jpg"
+  },
+  {
+    "id": 6,
+    "estate_title": "Urban Chic Townhouse",
+    "segment_name": "House",
+    "description": "Stylish townhouse located in a vibrant urban neighborhood.",
+    "price": "$950,000",
+    "status": "sale",
+    "area": "2000 sq ft",
+    "location": "Brooklyn, New York",
+    "facilities": ["Modern kitchen", "Rooftop garden", "Home office"],
+    "image": "https://example.com/townhouse1.jpg"
+  }
+]
