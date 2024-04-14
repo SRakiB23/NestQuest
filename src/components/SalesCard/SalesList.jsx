@@ -29,7 +29,7 @@ const SalesList = ({ list }) => {
               </div>
             </div>
             <hr />
-            <div className="flex items-center gap-52 justify-between">
+            <div className="flex items-center justify-between lg:gap-52">
               <p>Size: {area}</p>
               <p className="text-red-500 text-xl">{status}!</p>
             </div>

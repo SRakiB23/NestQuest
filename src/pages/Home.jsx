@@ -1,3 +1,4 @@
+import Achivement from "../components/Achivement/Achivement";
 import Banner from "../components/Banner/Banner";
 import SalesCard from "../components/SalesCard/SalesCard";
 
@@ -6,6 +7,7 @@ const Home = () => {
     <div className="md:max-w-7xl mx-auto">
       <Banner></Banner>
       <SalesCard></SalesCard>
+      <Achivement></Achivement>
     </div>
   );
 };
