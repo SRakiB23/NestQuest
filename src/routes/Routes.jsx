@@ -22,6 +22,7 @@ export const router = createBrowserRouter([
             <PropertyDetails></PropertyDetails>
           </PrivateRoute>
         ),
+        loader: () => fetch("/data.json"),
       },
       {
         path: "/login",

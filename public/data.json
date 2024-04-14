@@ -7,9 +7,12 @@
     "price": "$2,500,000",
     "status": "sale",
     "area": "5000 sq ft",
-    "location": "Malibu, California",
+    "location": "334 Rock Hill,Malibu, California",
     "facilities": ["Living room", "Swimming pool", "Gourmet kitchen"],
-    "image": "https://example.com/villa1.jpg"
+    "image": "https://i.ibb.co/wg7HbXX/1.jpg",
+    "bed": "9",
+    "bathroom": "6",
+    "details": "Perched atop a picturesque cliffside, this luxury villa offers an unparalleled retreat with breathtaking vistas of the boundless ocean. The epitome of elegance and sophistication, it boasts spacious interiors adorned with opulent furnishings and state-of-the-art amenities. Every corner is meticulously designed to harmonize with the surrounding natural beauty, providing an oasis of tranquility and indulgence. From its expansive terrace, guests can bask in the warmth of the sun while savoring the mesmerizing sight of azure waters stretching to the horizon. Whether for a romantic getaway or a lavish family vacation, this exquisite villa promises an unforgettable experience of luxury living amidst the serenity of the ocean."
   },
   {
     "id": 2,
@@ -19,13 +22,16 @@
     "price": "$1,200,000",
     "status": "sale",
     "area": "1500 sq ft",
-    "location": "New York City, New York",
+    "location": "12/A, Park Street, New York City, New York",
     "facilities": [
       "Open-concept living area",
       "Fitness center",
       "Roof terrace"
     ],
-    "image": "https://example.com/apartment1.jpg"
+    "image": "https://i.ibb.co/qW27fBZ/property1.jpg",
+    "bed": "7",
+    "bathroom": "5",
+    "details": "Nestled in the heart of the vibrant cityscape, this modern loft embodies contemporary urban living at its finest. With its sleek design, clean lines, and minimalist aesthetic, it exudes a chic ambiance that reflects the dynamic energy of downtown living. Floor-to-ceiling windows flood the space with natural light, offering panoramic views of the bustling city below. The open-concept layout seamlessly integrates living, dining, and entertaining areas, creating a versatile space ideal for both relaxation and social gatherings. Thoughtfully curated furnishings and upscale amenities enhance the loft's cosmopolitan appeal, providing a stylish retreat for discerning travelers and city dwellers alike."
   },
   {
     "id": 3,
@@ -35,9 +41,12 @@
     "price": "$800,000",
     "status": "sale",
     "area": "2500 sq ft",
-    "location": "Cotswolds, England",
+    "location": "290, Terry Lane, Cotswolds, England",
     "facilities": ["Cozy fireplace", "Garden patio", "Outdoor dining area"],
-    "image": "https://example.com/cottage1.jpg"
+    "image": "https://i.ibb.co/47LtFd4/3.webp",
+    "bed": "4",
+    "bathroom": "2",
+    "details": "Experience the charm of country living in this quaint cottage nestled amidst lush greenery. Located in the idyllic countryside of the Cotswolds, this charming retreat offers a peaceful escape from the hustle and bustle of city life. Step inside to discover cozy interiors adorned with a rustic fireplace, inviting garden patio, and outdoor dining area. Relax and unwind in the tranquility of nature, surrounded by rolling hills, meandering streams, and picturesque villages. Whether sipping tea in the garden or exploring the scenic countryside, this charming cottage promises a delightful retreat for those seeking relaxation and rejuvenation."
   },
   {
     "id": 4,
@@ -47,9 +56,12 @@
     "price": "$3,000,000",
     "status": "sale",
     "area": "3500 sq ft",
-    "location": "Los Angeles, California",
+    "location": "2203, Los Angeles, California",
     "facilities": ["Spa-inspired bathroom", "Private terrace", "Home theater"],
-    "image": "https://example.com/penthouse1.jpg"
+    "image": "https://i.ibb.co/TqCvWSG/4.jpg",
+    "bed": "10",
+    "bathroom": "7",
+    "details": "Indulge in the epitome of urban luxury with this elegant penthouse offering breathtaking views of the city skyline. Located in the heart of Los Angeles, this exclusive residence boasts sophisticated design, luxurious amenities, and unparalleled privacy. Step inside to discover a sanctuary of style and comfort, with spa-inspired bathrooms, a private terrace, and a state-of-the-art home theater. Floor-to-ceiling windows frame panoramic views of the iconic cityscape, creating an ambiance of sophistication and serenity. Whether hosting lavish gatherings or enjoying quiet moments of relaxation, this luxury penthouse offers an unparalleled lifestyle in one of the world's most desirable locations."
   },
   {
     "id": 5,
@@ -59,9 +71,12 @@
     "price": "$1,800,000",
     "status": "sale",
     "area": "4000 sq ft",
-    "location": "Maui, Hawaii",
+    "location": "3336, RoseWeood Lane, Maui, Hawaii",
     "facilities": ["Oceanfront deck", "Jacuzzi", "BBQ area"],
-    "image": "https://example.com/beachhouse1.jpg"
+    "image": "https://i.ibb.co/nrWxGQX/5.jpg",
+    "bed": "4",
+    "bathroom": "2",
+    "details": "Escape to paradise with this secluded beachfront retreat offering direct access to pristine sandy shores. Nestled along the tranquil coastline of Maui, this exquisite residence provides the ultimate sanctuary for beach lovers and sun seekers alike. Step outside to discover an oceanfront deck, perfect for soaking up the sun or watching the sunset over the Pacific horizon. Unwind in the rejuvenating waters of the Jacuzzi or host al fresco gatherings in the BBQ area. With its idyllic location and luxurious amenities, this beachfront retreat offers a rare opportunity to experience the beauty and serenity of island living."
   },
   {
     "id": 6,
@@ -71,8 +86,11 @@
     "price": "$950,000",
     "status": "sale",
     "area": "2000 sq ft",
-    "location": "Brooklyn, New York",
+    "location": "96, Marine Drive, Brooklyn, New York",
     "facilities": ["Modern kitchen", "Rooftop garden", "Home office"],
-    "image": "https://example.com/townhouse1.jpg"
+    "image": "https://i.ibb.co/f1n6sDs/6.jpg",
+    "bed": "6",
+    "bathroom": "4",
+    "details": "Embrace city living with this stylish townhouse located in the heart of Brooklyn's vibrant urban neighborhood. Combining modern design with urban chic, this residence offers a sophisticated retreat for discerning homeowners. Step inside to discover a sleek, open-concept layout featuring a modern kitchen, spacious living areas, and a home office. Ascend to the rooftop garden to enjoy panoramic views of the city skyline or relax in the tranquility of your private oasis. With its prime location, contemporary design, and luxurious amenities, this urban townhouse offers the perfect blend of style and convenience for modern city living."
   }
 ]

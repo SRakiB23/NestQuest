@@ -11,7 +11,7 @@ const SalesCard = () => {
   });
   return (
     <div className="bg-slate-100">
-      <h2 className="text-3xl font-bold py-6 px-2">Latest in Sales</h2>
+      <h2 className="text-4xl font-bold py-6 px-3">Latest in Sales</h2>
       <div className="md:grid grid-cols-3 gap-6">
         {lists.map((list) => (
           <SalesList key={list.id} list={list}></SalesList>

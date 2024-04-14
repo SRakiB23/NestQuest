@@ -2,17 +2,22 @@ import { IoLocationOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
 
 const SalesList = ({ list }) => {
-  const { estate_title, location, facilities, segment_name, status, area, id } =
-    list;
+  const {
+    estate_title,
+    location,
+    facilities,
+    segment_name,
+    status,
+    area,
+    id,
+    image,
+  } = list;
   return (
     <div>
       <div>
         <div className="card card-compact bg-slate-50">
-          <figure>
-            <img
-              src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
-              alt="Shoes"
-            />
+          <figure className="h-64 p-2">
+            <img src={image} alt="home" />
           </figure>
           <div className="card-body">
             <h2 className="card-title font-bold">{estate_title}</h2>
