@@ -1,7 +1,8 @@
 import { IoLocationOutline } from "react-icons/io5";
+import { Link } from "react-router-dom";
 
 const SalesList = ({ list }) => {
-  const { estate_title, location, facilities, segment_name, status, area } =
+  const { estate_title, location, facilities, segment_name, status, area, id } =
     list;
   return (
     <div>
@@ -35,9 +36,13 @@ const SalesList = ({ list }) => {
             </div>
             <p>{segment_name}</p>
             <div className="card-actions justify-center">
-              <button className="btn bg-yellow-400 text-lg">
-                View Property
-              </button>
+              {
+                <Link to={`/list/${id}`}>
+                  <button className="btn bg-yellow-400 text-lg">
+                    View Property
+                  </button>
+                </Link>
+              }
             </div>
           </div>
         </div>

@@ -1,17 +1,41 @@
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../providers/AuthProvider";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
+  const { signIn } = useContext(AuthContext);
+  const location = useLocation();
+  const navigate = useNavigate();
+  console.log("login location", location);
+
   useEffect(() => {
     AOS.init();
   }, []);
+
   const handleLogin = (e) => {
     e.preventDefault();
     console.log(e.currentTarget);
     const form = new FormData(e.currentTarget);
-    console.log(form.get("email"));
+    const email = form.get("email");
+    const password = form.get("password");
+    console.log(email, password);
+    <ToastContainer />;
+
+    signIn(email, password)
+      .then(() => {
+        toast.success("Login Successful");
+
+        //navigate
+        navigate(location?.state ? location.state : "/");
+      })
+      .catch((error) => {
+        toast.error("Login Failed. Please Try Again.");
+        console.error("Login Error:", error);
+      });
   };
 
   return (
@@ -62,7 +86,7 @@ const Login = () => {
                   <button className="btn bg-black text-white">Login</button>
                 </div>
                 <p>
-                  New Here!{" "}
+                  New Here!
                   <Link
                     to="/register"
                     className="underline pl-2 text-blue-600 font-bold"

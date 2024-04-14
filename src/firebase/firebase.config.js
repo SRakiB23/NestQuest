@@ -3,16 +3,18 @@ import { initializeApp } from "firebase/app";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
+console.log("inside fire", import.meta.env.VITE_PASS);
+
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBoM_7QFNqyrvxJijYvu6iavHRGwL4zKDY",
-  authDomain: "real-state-assignment-e805a.firebaseapp.com",
-  projectId: "real-state-assignment-e805a",
-  storageBucket: "real-state-assignment-e805a.appspot.com",
-  messagingSenderId: "687325117697",
-  appId: "1:687325117697:web:0fb149f4d18bc8ef51af00",
+  apiKey: import.meta.env.VITE_APIKEY,
+  authDomain: import.meta.env.VITE_AUTHDOMAIN,
+  projectId: import.meta.env.VITE_PROJECTID,
+  storageBucket: import.meta.env.VITE_STORAGEBUCKET,
+  messagingSenderId: import.meta.env.VITE_MESSAGINGSENDERID,
+  appId: import.meta.env.VITE_APPID,
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-export default app();
+export default app;
