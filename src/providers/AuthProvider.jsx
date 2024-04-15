@@ -21,15 +21,11 @@ const gitHubProvider = new GithubAuthProvider();
 const auth = getAuth(app);
 
 const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState();
   const [loading, setLoading] = useState(true);
   console.log(user);
 
-  // const createUser = (email, password) => {
-  //   setLoading(true);
-  //   return createUserWithEmailAndPassword(auth, email, password);
-  // };
-
+  //create user
   const createUser = (email, password, displayName, photoURL) => {
     setLoading(true);
     return createUserWithEmailAndPassword(auth, email, password)

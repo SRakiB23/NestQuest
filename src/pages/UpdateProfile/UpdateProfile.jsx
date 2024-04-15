@@ -1,14 +1,34 @@
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { AuthContext } from "../../providers/AuthProvider";
+import { updateProfile } from "firebase/auth";
 import "react-toastify/dist/ReactToastify.css";
+import { toast } from "react-toastify";
 
 const UpdateProfile = () => {
   const { user } = useContext(AuthContext);
+  const [displayName, setDisplayName] = useState(user ? user.displayName : "");
+  const [photoURL, setPhotoURL] = useState(user ? user.photoURL : "");
+
   useEffect(() => {
     AOS.init();
   }, []);
+
+  // Function to handle profile update
+  const handleUpdateProfile = async (e) => {
+    e.preventDefault();
+
+    try {
+      await updateProfile(user, {
+        displayName: displayName,
+        photoURL: photoURL,
+      });
+      toast.success("Profile Updated Successfully!");
+    } catch (error) {
+      toast.error("Profile Update Failed");
+    }
+  };
 
   return (
     <div
@@ -24,15 +44,15 @@ const UpdateProfile = () => {
               <h1 className="text-6xl font-bold">Update Profile</h1>
             </div>
             <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-yellow-300">
-              <form className="card-body">
+              <form onSubmit={handleUpdateProfile} className="card-body">
                 <div className="form-control">
                   <label className="label">
-                    <span className="label-text">Email</span>
+                    <span className="label-text">Name</span>
                   </label>
                   <input
-                    type="email"
-                    placeholder={user ? user.email : "Email"}
-                    name="email"
+                    type="text"
+                    value={displayName}
+                    onChange={(e) => setDisplayName(e.target.value)}
                     className="input input-bordered"
                   />
                 </div>
@@ -42,18 +62,15 @@ const UpdateProfile = () => {
                   </label>
                   <input
                     type="text"
-                    placeholder={user ? user.photoURL : "PhotoURL"}
-                    name="password"
+                    value={photoURL}
+                    onChange={(e) => setPhotoURL(e.target.value)}
                     className="input input-bordered"
                   />
-                  <label className="label">
-                    <a href="#" className="label-text-alt link link-hover">
-                      Forgot password?
-                    </a>
-                  </label>
                 </div>
                 <div className="form-control mt-6">
-                  <button className="btn bg-black text-white">Update</button>
+                  <button className="btn bg-black text-white text-xl">
+                    Update
+                  </button>
                 </div>
               </form>
             </div>

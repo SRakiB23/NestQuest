@@ -1,11 +1,11 @@
 import { Link, NavLink } from "react-router-dom";
 import "animate.css";
-import { useContext, useState } from "react"; // Import useState
+import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
-  const [showName, setShowName] = useState(false); // State to control visibility of display name
+  const [showName, setShowName] = useState(false);
 
   const handleLogOut = () => {
     logOut()
@@ -86,7 +86,6 @@ const Navbar = () => {
                   src={user ? user.photoURL : "nai"}
                   className="w-10 h-10 rounded-full cursor-pointer"
                 />
-                {/* Show display name on hover */}
                 {showName && (
                   <span className="absolute top-1 bg-white w-32 rounded-lg py-1 px-2">
                     {user.displayName}

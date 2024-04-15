@@ -51,7 +51,7 @@ const Register = () => {
     }
 
     //create user
-    createUser(email, password)
+    createUser(email, password, displayName, photoURL)
       .then(() => {
         toast.success("Registration Successfull");
         navigate(location?.state ? location.state : "/");
