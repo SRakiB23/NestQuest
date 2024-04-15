@@ -1,11 +1,14 @@
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
+import { toast } from "react-toastify";
 
 const Register = () => {
   const { createUser } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const [showPassword, setShowPassword] = useState(false);
 
   useEffect(() => {
     AOS.init();
@@ -21,14 +24,39 @@ const Register = () => {
     const password = form.get("password");
     console.log(name, email, photo, password);
 
-    //create user
+    //PASSWORD validation
 
+    const validatePassword = (password) => {
+      const upperCase = /[A-Z]/;
+      const lowerCase = /[a-z]/;
+      const length = /^.{6,}$/;
+
+      // Check if the password meets all requirements
+      const hasUppercase = upperCase.test(password);
+      const hasLowercase = lowerCase.test(password);
+      const hasMinLength = length.test(password);
+
+      // Return true if all requirements are met, otherwise return false
+      return hasUppercase && hasLowercase && hasMinLength;
+    };
+
+    // Validate the password
+    if (!validatePassword(password)) {
+      // Password does not meet requirements, show error message
+      toast.error(
+        "Password must contain at least one uppercase letter, one lowercase letter, and be at least 6 characters long."
+      );
+      return; // Prevent further execution
+    }
+
+    //create user
     createUser(email, password)
-      .then((result) => {
-        console.log(result.user);
+      .then(() => {
+        toast.success("Registration Successfull");
+        navigate(location?.state ? location.state : "/");
       })
-      .catch((error) => {
-        console.log(error);
+      .catch(() => {
+        toast.error("Please Try Again");
       });
   };
 
@@ -88,12 +116,15 @@ const Register = () => {
                     <span className="label-text">Password</span>
                   </label>
                   <input
-                    type="password"
+                    type={showPassword ? "text" : "password"}
                     name="password"
                     placeholder="Password"
                     className="input input-bordered"
                     required
                   />
+                  <span onClick={() => setShowPassword(!showPassword)}>
+                    Show
+                  </span>
                   <label className="label">
                     <a href="#" className="label-text-alt link link-hover">
                       Forgot password?
@@ -101,7 +132,7 @@ const Register = () => {
                   </label>
                 </div>
                 <div className="form-control mt-6">
-                  <button className="btn bg-black text-white">Login</button>
+                  <button className="btn bg-black text-white">Register</button>
                 </div>
                 <p>
                   Have an Account! Please

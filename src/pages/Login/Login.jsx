@@ -7,7 +7,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
-  const { signIn } = useContext(AuthContext);
+  const { signIn, googleLogin, gitHubLogin } = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
   console.log("login location", location);
@@ -35,6 +35,34 @@ const Login = () => {
       .catch((error) => {
         toast.error("Login Failed. Please Try Again.");
         console.error("Login Error:", error);
+      });
+  };
+
+  //handleGoogle
+  const handleGoogleLogin = () => {
+    googleLogin()
+      .then(() => {
+        toast.success("Google Login Successful");
+        // navigate or perform any other actions upon successful login
+        navigate(location?.state ? location.state : "/");
+      })
+      .catch((error) => {
+        toast.error("Google Login Failed. Please Try Again.");
+        console.error("Google Login Error:", error);
+      });
+  };
+
+  //handleGitHub
+  const handleGitHubLogin = () => {
+    gitHubLogin()
+      .then(() => {
+        toast.success("GitHub Login Successful");
+        // navigate or perform any other actions upon successful login
+        navigate(location?.state ? location.state : "/");
+      })
+      .catch((error) => {
+        toast.error("GitHub Login Failed. Please Try Again.");
+        console.error("GitHub Login Error:", error);
       });
   };
 
@@ -95,6 +123,14 @@ const Login = () => {
                   </Link>
                 </p>
               </form>
+              <div className="flex justify-around">
+                <button onClick={handleGoogleLogin} className="btn px-2">
+                  Google
+                </button>
+                <button onClick={handleGitHubLogin} className="btn px-2">
+                  GitHub
+                </button>
+              </div>
             </div>
           </div>
         </div>
