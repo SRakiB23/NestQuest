@@ -1,12 +1,11 @@
 import { useContext, useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
-import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const UpdateProfile = () => {
+  const { user } = useContext(AuthContext);
   useEffect(() => {
     AOS.init();
   }, []);
@@ -32,22 +31,20 @@ const UpdateProfile = () => {
                   </label>
                   <input
                     type="email"
-                    placeholder="email"
+                    placeholder={user ? user.email : "Email"}
                     name="email"
                     className="input input-bordered"
-                    required
                   />
                 </div>
                 <div className="form-control">
                   <label className="label">
-                    <span className="label-text">Password</span>
+                    <span className="label-text">PhotoURL</span>
                   </label>
                   <input
-                    type="password"
-                    placeholder="password"
+                    type="text"
+                    placeholder={user ? user.photoURL : "PhotoURL"}
                     name="password"
                     className="input input-bordered"
-                    required
                   />
                   <label className="label">
                     <a href="#" className="label-text-alt link link-hover">

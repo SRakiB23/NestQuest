@@ -4,6 +4,7 @@ import "aos/dist/aos.css";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import { toast } from "react-toastify";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Register = () => {
   const { createUser } = useContext(AuthContext);
@@ -18,11 +19,11 @@ const Register = () => {
     e.preventDefault();
     console.log(e.currentTarget);
     const form = new FormData(e.currentTarget);
-    const name = form.get("name");
+    const displayName = form.get("displayName");
     const email = form.get("email");
-    const photo = form.get("photourl");
+    const photoURL = form.get("photoURL");
     const password = form.get("password");
-    console.log(name, email, photo, password);
+    console.log(displayName, email, photoURL, password);
 
     //PASSWORD validation
 
@@ -83,7 +84,7 @@ const Register = () => {
                     type="text"
                     placeholder="Name"
                     className="input input-bordered"
-                    name="name"
+                    name="displayName"
                     required
                   />
                 </div>
@@ -105,8 +106,8 @@ const Register = () => {
                   </label>
                   <input
                     type="text"
-                    name="photourl"
-                    placeholder="PhotoUrl"
+                    name="photoURL"
+                    placeholder="PhotoURL"
                     className="input input-bordered"
                     required
                   />
@@ -122,8 +123,11 @@ const Register = () => {
                     className="input input-bordered"
                     required
                   />
-                  <span onClick={() => setShowPassword(!showPassword)}>
-                    Show
+                  <span
+                    className="relative bottom-8 left-72"
+                    onClick={() => setShowPassword(!showPassword)}
+                  >
+                    {showPassword ? <FaEyeSlash /> : <FaEye />}
                   </span>
                   <label className="label">
                     <a href="#" className="label-text-alt link link-hover">

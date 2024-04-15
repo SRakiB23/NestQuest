@@ -1,10 +1,12 @@
 import { Link, NavLink } from "react-router-dom";
 import "animate.css";
-import { useContext } from "react";
+import { useContext, useState } from "react"; // Import useState
 import { AuthContext } from "../../providers/AuthProvider";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
+  const [showName, setShowName] = useState(false); // State to control visibility of display name
+
   const handleLogOut = () => {
     logOut()
       .then((result) => {
@@ -14,6 +16,11 @@ const Navbar = () => {
         console.log(error);
       });
   };
+
+  const toggleName = () => {
+    setShowName(!showName); // Toggle the state on hover
+  };
+
   const navLinks = (
     <>
       <li>
@@ -33,7 +40,7 @@ const Navbar = () => {
 
   return (
     <div>
-      <div className="navbar bg-yellow-300  md:max-w-7xl mx-auto">
+      <div className="navbar bg-yellow-300 md:max-w-7xl mx-auto">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -63,26 +70,33 @@ const Navbar = () => {
             NestQuest
           </a>
         </div>
-        <div className="navbar-center hidden lg:flex">
+        <div className="navbar-center hidden lg:flex items-center">
           <ul className="menu menu-horizontal px-1">{navLinks}</ul>
         </div>
-        <div className="navbar-end">
-          <div
-            tabIndex={0}
-            role="button"
-            className="btn btn-ghost btn-circle avatar"
-          >
-            <div className="w-10 rounded-full">
-              <img
-                alt="Tailwind CSS Navbar component"
-                src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
-              />
+        <div className="navbar-end flex items-center">
+          {user?.email ? (
+            <div className="dropdown dropdown-end flex items-center">
+              <div
+                className="relative"
+                onMouseEnter={toggleName}
+                onMouseLeave={toggleName}
+              >
+                <img
+                  alt="User avatar"
+                  src={user ? user.photoURL : "nai"}
+                  className="w-10 h-10 rounded-full cursor-pointer"
+                />
+                {/* Show display name on hover */}
+                {showName && (
+                  <span className="absolute top-1 bg-white w-32 rounded-lg py-1 px-2">
+                    {user.displayName}
+                  </span>
+                )}
+              </div>
+              <button onClick={handleLogOut} className="btn btn-secondary ml-2">
+                LogOut
+              </button>
             </div>
-          </div>
-          {user ? (
-            <button onClick={handleLogOut} className="btn btn-secondary ml-2">
-              LogOut
-            </button>
           ) : (
             <Link to="/login" className="btn btn-secondary ml-2">
               Login

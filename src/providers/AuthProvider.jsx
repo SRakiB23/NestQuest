@@ -5,6 +5,7 @@ import {
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
+  updateProfile,
 } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
 import app from "../firebase/firebase.config";
@@ -20,14 +21,30 @@ const gitHubProvider = new GithubAuthProvider();
 const auth = getAuth(app);
 
 const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState([]);
+  const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   console.log(user);
 
-  const createUser = (email, password) => {
+  // const createUser = (email, password) => {
+  //   setLoading(true);
+  //   return createUserWithEmailAndPassword(auth, email, password);
+  // };
+
+  const createUser = (email, password, displayName, photoURL) => {
     setLoading(true);
-    return createUserWithEmailAndPassword(auth, email, password);
+    return createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        // Update profile with display name and photo URL
+        return updateProfile(userCredential.user, {
+          displayName: displayName,
+          photoURL: photoURL,
+        });
+      })
+      .catch((error) => {
+        console.error("Error creating user:", error);
+      });
   };
+
   const signIn = (email, password) => {
     setLoading(true);
     return signInWithEmailAndPassword(auth, email, password);
