@@ -59,7 +59,7 @@ const Navbar = () => {
               {navLinks}
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl animate__animated animate__bounce">
+          <a className="btn btn-ghost text-3xl font-bold animate__animated animate__bounce">
             NestQuest
           </a>
         </div>
