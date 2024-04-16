@@ -43,7 +43,7 @@ const Navbar = () => {
 
   return (
     <div>
-      <div className="navbar bg-yellow-300 md:max-w-7xl mx-auto">
+      <div className="navbar md:max-w-7xl mx-auto px-0">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -69,9 +69,11 @@ const Navbar = () => {
               {navLinks}
             </ul>
           </div>
-          <a className="btn btn-ghost text-3xl font-bold animate__animated animate__bounce">
-            NestQuest
-          </a>
+          <Link to="/">
+            <p className="text-3xl font-bold animate__animated animate__bounce">
+              NestQuest
+            </p>
+          </Link>
         </div>
         <div className="navbar-center hidden lg:flex items-center">
           <ul className="menu menu-horizontal px-1">{navLinks}</ul>
@@ -90,17 +92,17 @@ const Navbar = () => {
                   className="w-10 h-10 rounded-full cursor-pointer"
                 />
                 {showName && (
-                  <span className="absolute top-1 bg-white w-32 rounded-lg py-1 px-2">
+                  <span className="md:absolute top-1 bg-white w-32 rounded-lg py-1 px-2">
                     {user.displayName}
                   </span>
                 )}
               </div>
-              <button onClick={handleLogOut} className="btn btn-secondary ml-2">
+              <button onClick={handleLogOut} className="btn bg-yellow-300 ml-2">
                 LogOut
               </button>
             </div>
           ) : (
-            <Link to="/login" className="btn btn-secondary ml-2">
+            <Link to="/login" className="btn bg-yellow-400 ml-2 font-bold">
               Login
             </Link>
           )}
