@@ -18,7 +18,7 @@ const Navbar = () => {
   };
 
   const toggleName = () => {
-    setShowName(!showName); // Toggle the state on hover
+    setShowName(!showName);
   };
 
   const navLinks = (
@@ -31,6 +31,9 @@ const Navbar = () => {
       </li>
       <li>
         <NavLink to="/register">Registration</NavLink>
+      </li>
+      <li>
+        <NavLink to="/agent">Agents</NavLink>
       </li>
       <li>
         <NavLink to="/update">Update Profile</NavLink>

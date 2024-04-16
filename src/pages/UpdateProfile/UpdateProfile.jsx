@@ -45,6 +45,11 @@ const UpdateProfile = () => {
             </div>
             <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-yellow-300">
               <form onSubmit={handleUpdateProfile} className="card-body">
+                <div className="avatar">
+                  <div className=" w-44 mask mask-squircle mx-auto">
+                    <img src={user.photoURL} />
+                  </div>
+                </div>
                 <div className="form-control">
                   <label className="label">
                     <span className="label-text">Name</span>
@@ -53,6 +58,16 @@ const UpdateProfile = () => {
                     type="text"
                     value={displayName}
                     onChange={(e) => setDisplayName(e.target.value)}
+                    className="input input-bordered"
+                  />
+                </div>
+                <div className="form-control">
+                  <label className="label">
+                    <span className="label-text">Email</span>
+                  </label>
+                  <input
+                    type="text"
+                    value={user.email}
                     className="input input-bordered"
                   />
                 </div>

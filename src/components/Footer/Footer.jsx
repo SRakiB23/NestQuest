@@ -1,9 +1,11 @@
 import { BsBuildingFillCheck } from "react-icons/bs";
+import { FaPhone, FaVoicemail } from "react-icons/fa6";
+import { HiOutlineMailOpen } from "react-icons/hi";
 
 const Footer = () => {
   return (
     <div>
-      <footer className="footer p-10 bg-base-300 text-base-content">
+      <footer className="footer p-10 bg-base-300 text-base-content max-w-7xl mx-auto">
         <div>
           <div className="flex gap-1 items-center">
             <BsBuildingFillCheck className="text-4xl" />
@@ -17,17 +19,18 @@ const Footer = () => {
         </div>
         <nav>
           <h6 className="footer-title text-xl">Contact Info</h6>
-          <a className="link link-hover">Branding</a>
-          <a className="link link-hover">Design</a>
-          <a className="link link-hover">Marketing</a>
-          <a className="link link-hover">Advertisement</a>
+          <a className="link link-hover">Dhanmondi, Dhaka</a>
+          <a className="link link-hover flex items-center gap-2">
+            <FaPhone /> (+88) 0125489354
+          </a>
+          <a className="link link-hover flex items-center gap-2">
+            <HiOutlineMailOpen className="text-xl" /> hello@nestquest.com
+          </a>
         </nav>
         <nav>
           <h6 className="footer-title text-xl">Recent Listing</h6>
-          <a className="link link-hover">About us</a>
-          <a className="link link-hover">Contact</a>
-          <a className="link link-hover">Jobs</a>
-          <a className="link link-hover">Press kit</a>
+          <a className="link link-hover">TownHouse</a>
+          <a className="link link-hover">PenthHouse</a>
         </nav>
         <nav>
           <h6 className="footer-title">Social</h6>

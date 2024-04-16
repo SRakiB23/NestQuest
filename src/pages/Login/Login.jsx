@@ -5,6 +5,8 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { FcGoogle } from "react-icons/fc";
+import { FaGithub } from "react-icons/fa";
 
 const Login = () => {
   const { signIn, googleLogin, gitHubLogin } = useContext(AuthContext);
@@ -123,12 +125,12 @@ const Login = () => {
                   </Link>
                 </p>
               </form>
-              <div className="flex justify-around">
-                <button onClick={handleGoogleLogin} className="btn px-2">
-                  Google
+              <div className="flex justify-center gap-5 pb-2">
+                <button onClick={handleGoogleLogin} className="btn py-2">
+                  <FcGoogle className="text-3xl" />
                 </button>
-                <button onClick={handleGitHubLogin} className="btn px-2">
-                  GitHub
+                <button onClick={handleGitHubLogin} className="btn py-2">
+                  <FaGithub className="text-3xl" />
                 </button>
               </div>
             </div>

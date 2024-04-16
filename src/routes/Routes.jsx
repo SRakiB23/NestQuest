@@ -7,6 +7,7 @@ import PropertyDetails from "../pages/PropertyDetails/PropertyDetails";
 import PrivateRoute from "./PrivateRoute";
 import UpdateProfile from "../pages/UpdateProfile/UpdateProfile";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
+import AgentList from "../pages/AgentList/AgentList";
 
 export const router = createBrowserRouter([
   {
@@ -33,11 +34,23 @@ export const router = createBrowserRouter([
       },
       {
         path: "/update",
-        element: <UpdateProfile></UpdateProfile>,
+        element: (
+          <PrivateRoute>
+            <UpdateProfile></UpdateProfile>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/register",
         element: <Register></Register>,
+      },
+      {
+        path: "/agent",
+        element: (
+          <PrivateRoute>
+            <AgentList></AgentList>
+          </PrivateRoute>
+        ),
       },
     ],
   },
