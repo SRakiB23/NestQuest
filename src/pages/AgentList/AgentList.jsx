@@ -60,7 +60,7 @@ const AgentList = () => {
           </figure>
           <div className="card-body">
             <h2 className="card-title">David Given</h2>
-            <p>Company Agent at NestQuest Inc.</p>
+            <p>Company Senior Agent at NestQuest Inc.</p>
             <p>
               David Given, a seasoned Company Agent at NestQuest Inc., excels in
               providing the ideal home solutions. With an unwavering dedication
@@ -90,8 +90,8 @@ const AgentList = () => {
             <img src="https://i.ibb.co/pxQ3KgS/agent.png" alt="Agent" />
           </figure>
           <div className="card-body">
-            <h2 className="card-title">Agent</h2>
-            <p>Founder & CEO at NestQuest Inc.</p>
+            <h2 className="card-title">Adam Hatt</h2>
+            <p>Company Senior Agent at NestQuest Inc.</p>
             <p>
               Adam Hatt, a dedicated Real Estate Agent at NestQuest Inc., offers
               personalized service to match clients with their dream homes. With
