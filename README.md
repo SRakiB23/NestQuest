@@ -10,7 +10,7 @@ The Real Estate Company to Fullfill Your Dream.
 - Created a custom 404 error page to guide users back to the main site in case of broken links or invalid requests, improving overall navigation and user satisfaction.
 - Enhanced the website's functionality and user experience with npm packages to adding dynamic animations and interactive maps.
 
--Npm Packages:
-*AOS
-*Animate
-\*React Leaflet
+\*Npm Packages:
+(1).AOS
+(2).Animate
+(3).React Leaflet
